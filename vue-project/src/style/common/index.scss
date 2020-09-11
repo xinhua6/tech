@@ -1,0 +1,138 @@
+@import "./reset";
+@import "./animate.scss";
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Microsoft YaHei", 微软雅黑;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.c-fl {
+  float: left;
+}
+
+.c-fr {
+  float: right;
+}
+
+/*清除浮动*/
+.c-clearfix {
+  zoom: 1;
+}
+
+.c-clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/*单行文字溢出省略号*/
+.c-ell {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.c-tc {
+  text-align: center;
+}
+
+.c-cp {
+  cursor: pointer;
+}
+
+.c-h100 {
+  height: 100%;
+}
+
+.c-w100 {
+  width: 100%;
+}
+
+.c-hide {
+  display: none !important;
+}
+
+.c-show {
+  display: block !important;
+}
+
+.c-flex {
+  display: flex;
+}
+
+.c-flex_1 {
+  flex: 1;
+}
+// 让内部宽高感知变化
+.c-flex1 {
+  flex: 1;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.c-tvc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-jc_e {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.c-fd_c {
+  display: flex;
+  flex-direction: column;
+}
+
+.c-fd_r {
+  display: flex;
+  flex-direction: row;
+}
+
+.c-fd_rr {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.c-jc_sb {
+  display: flex;
+  justify-content: space-between;
+}
+
+.c-jc_sa {
+  display: flex;
+  justify-content: space-around;
+}
+
+.c-ai_c {
+  display: flex;
+  align-items: center;
+}
+.c-link{
+  cursor: pointer;
+  color: $base-color;
+}
+
+.c-os {
+  overflow: scroll;
+}
+
+
+@media print {
+  .c-print-hide {
+    display: none !important;
+  }
+}
+
+
+

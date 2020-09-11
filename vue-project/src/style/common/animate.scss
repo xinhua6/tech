@@ -1,0 +1,91 @@
+$duration: .5s;
+/**
+  常用动画效果，可自由搭配
+   eg ：
+   <transition enter-active-class="c-slide-in-right" leave-active-class="c-slide-out-right">
+      <h1 v-show="test">动画例子</h1>
+   </transition>
+ */
+
+// 下进下出
+.c-slide-in-down {
+  animation: slideInDown $duration;
+}
+.c-slide-out-down {
+  animation: slideOutDown $duration;
+}
+// 右进右出
+.c-slide-in-right {
+  animation: slideInRight $duration;
+}
+.c-slide-out-right {
+  animation: slideOutRight $duration;
+}
+// 左进左出
+.c-slide-in-left {
+  animation: slideInLeft $duration;
+}
+.c-slide-out-left {
+  animation: slideOutLeft $duration;
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideOutDown {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: hidden;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideOutRight {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(100%, 0, 0);
+  }
+}
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+    visibility: hidden;
+  }
+
+  to {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    visibility: hidden;
+  }
+}

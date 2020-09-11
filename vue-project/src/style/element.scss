@@ -1,0 +1,76 @@
+
+/********表格*********/
+.el-table{
+  font-size:1.4rem !important;
+  .cell{
+    line-height:1.2em !important;
+  }
+}
+// 表头
+.el-table thead {
+  //color: $base-font-color !important;;
+}
+
+// ElementUI 样式
+.el-tabs__header {
+  margin: 0px !important;;
+}
+
+.el-tabs, .el-tabs--card {
+  width: 100% !important;;
+  height: 100% !important;;
+}
+
+.el-tabs__header {
+  height: 39px !important;;
+}
+
+.el-tabs__content {
+  height: calc(100% - 39px) !important;;
+  padding: 0px !important;
+}
+
+.el-tabs--border-card {
+  height: 100% !important;;
+}
+
+.el-tab-pane {
+  height: 100% !important;
+}
+//form
+//覆盖input 高度
+.el-input--mini .el-input__inner {
+  font-size: 1.4rem;
+  padding: 0 10px;
+  height: 1.8em;
+  line-height: 1.8em;
+}
+
+.el-input.is-disabled .el-input__inner{
+  color: #495E6F !important;;
+}
+// 隐藏DateTimePicker 日期时间选择器 分秒显示
+.p—due—date{
+  .el-time-panel{
+    width: 120px;
+    text-align: center;
+  }
+  .el-time-spinner div:nth-child(2){
+    display: none;
+  }
+}
+// 打印时保留颜色
+@media print {
+  .el-switch.is-checked .el-switch__core {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+  .el-progress-bar__outer{
+    background-color: #FFFFFF;
+  }
+}
+
+.el-tooltip__popper {
+  max-width: 400px;
+  line-height: 180%;
+}
