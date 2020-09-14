@@ -2,7 +2,7 @@
 <template>
   <div class="c-h100">
     <div class="part">
-      <span>方法一：使用el-table来封装</span>
+      <h4>方法一：使用el-table来封装</h4>
       <tree-table :treeData="treeData"
                   :columns="columns"
                   @select-change="checkChange"
@@ -13,7 +13,7 @@
     </div>
     <hr>
     <div class="part">
-      <span>方法二：使用el-tree来封装</span>
+      <h4>方法二：使用el-tree来封装</h4>
       <tree-table02 :formItems="columns" :tableData="treeData" @node-change="checkChange"></tree-table02>
     </div>
   </div>

@@ -83,15 +83,15 @@
     <div class="drawTool">
       <div class="c-fd_sb">
         <el-radio-group v-model="type" @change="draw"  size="small">
-          <el-radio-button label="marker">画点</el-radio-button>
-          <el-radio-button label="polyline">画线</el-radio-button>
-          <el-radio-button label="polygon">画面</el-radio-button>
-          <el-radio-button label="rectangle">画长方形</el-radio-button>
-          <el-radio-button label="circle">画圆</el-radio-button>
+          <el-radio-button label="marker">点</el-radio-button>
+          <el-radio-button label="polyline">线</el-radio-button>
+          <el-radio-button label="polygon">面</el-radio-button>
+          <el-radio-button label="rectangle">长方形</el-radio-button>
+          <el-radio-button label="circle">圆</el-radio-button>
         </el-radio-group>
         <el-button-group class="operate">
           <el-button  @click="clear" size="mini" style="height: 32px">清除</el-button>
-          <!--<el-button style="height: 37px" @click="edit">编辑</el-button>-->
+          <el-button  @click="clearAll" size="mini" style="height: 32px">清空</el-button>
         </el-button-group>
       </div>
     </div>
@@ -121,9 +121,9 @@
 </template>
 <script>
 import Axios from 'axios'
-
+import {MAP_CENTER} from 'src/config/index.js'
 let aMaploader = null
-const MAP_CENTER = [113.390465, 22.943853]
+
 function getAMap () {
   if (!window.AMap) {
     window.AMap = {}
@@ -329,9 +329,15 @@ export default {
       //监听draw事件(双击结束编辑)可获取画好的覆盖物
       var that = this
       mouseTool.on('draw',function(e){
-        console.log(e.obj.getPath())
-        that.axis = e.obj.getPath()
-        that.dealMapData()
+        if (that.type == 'marker') {
+          console.log(e.obj.w.position)
+          that.axis = [e.obj.w.position]
+          that.dealMapData()
+        } else {
+          console.log(e.obj.getPath(),555555555555)
+          that.axis = e.obj.getPath()
+          that.dealMapData()
+        }
       })
       this.mouseTool = mouseTool
 
@@ -529,11 +535,20 @@ export default {
       this.$_map.setFitView()
     },
 
-    // 清空画布
+    // 清楚对应类型
     clear() {
       this.$_map.remove(this.$_map.getAllOverlays(this.type))
       this.axis = []
       this.clearMapData()
+      this.draw()
+    },
+
+    // 清空画布
+    clearAll() {
+      this.$_map.clearMap();
+      this.axis = []
+      this.mapData = []
+      this.$emit('refreshMapData',this.mapData)
       this.draw()
     },
 

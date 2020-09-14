@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import global from './global'
 import './style/index.scss'
+import '../mock/mock'
 
 Vue.config.productionTip = false
 

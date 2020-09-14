@@ -1,7 +1,7 @@
 <template>
   <div class="c-fd_r c-h100">
     <div class="c-fd_c">
-      <search-input :size="mini" v-model="ajaxData.keyword"  @search="getData" placeholder="请输入关键字搜索"/>
+      <search-input size="mini" v-model="ajaxData.keyword"  @search="getData" placeholder="请输入关键字搜索"/>
       <el-menu router :default-active="$route.path" class="c-flex_1 c-os" >
         <component class="menu-item" v-for="(value) in navList" :key="value.title+value.url"
                    :index="value.url" :is="(value.children&&value.children.length>0)?'el-submenu':'el-menu-item'">
