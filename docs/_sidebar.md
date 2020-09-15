@@ -5,6 +5,7 @@
 			* [地图](/docs/web-font/vue/地图.md)
 			* [表格](/docs/web-font/vue/表格.md)
 			* [请求](/docs/web-font/vue/请求.md)
+			* [mock](/docs/web-font/vue/mock.md)
 		* [单元测试](docs/web-font/unitTest/目的.md)
 			* [语言与技术框架](docs/web-font/unitTest/语言与框架.md)
 			* [实践](docs/web-font/unitTest/实践.md)
